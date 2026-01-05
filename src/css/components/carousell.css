@@ -38,3 +38,9 @@
     left: 100%;
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  img {
+    transition: transform 0.2s ease;
+  }
+}

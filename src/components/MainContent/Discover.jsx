@@ -5,6 +5,8 @@
 // import "swiper/css/navigation";
 // import "swiper/css/pagination";
 
+import { useState } from "react";
+
 // mobile
 import imageMobileOne from "../../assets/images/mobile-image-hero-1.jpg";
 import imageMobileTwo from "../../assets/images/mobile-image-hero-2.jpg";
@@ -15,9 +17,12 @@ import imageDesktopOne from "../../assets/images/desktop-image-hero-1.jpg";
 import imageDesktopTwo from "../../assets/images/desktop-image-hero-2.jpg";
 import imageDesktopThree from "../../assets/images/desktop-image-hero-3.jpg";
 
-const CarousellBtn = () => (
+const CarousellBtn = ({ setIndex }) => (
   <div className="carousell__btn">
-    <button className="btn--prev">
+    <button
+      onClick={() => setIndex((prev) => (prev === 0 ? prev : prev - 1))}
+      className="btn--prev"
+    >
       <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M13 0L1 12l12 12"
@@ -27,7 +32,10 @@ const CarousellBtn = () => (
         />
       </svg>
     </button>
-    <button className="btn--next">
+    <button
+      onClick={() => setIndex((prev) => (prev === 2 ? prev : prev + 1))}
+      className="btn--next"
+    >
       <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M1 0l12 12L1 24"
@@ -40,7 +48,7 @@ const CarousellBtn = () => (
   </div>
 );
 
-const ImageCarousell = () => {
+const ImageCarousell = ({ setIndex, index }) => {
   const images = [
     { image: { id: 1, mobile: imageMobileOne, desktop: imageDesktopOne } },
     { image: { id: 2, mobile: imageMobileTwo, desktop: imageDesktopTwo } },
@@ -55,11 +63,17 @@ const ImageCarousell = () => {
         {images.map(({ image }) => (
           <picture key={image.id}>
             <source srcSet={image.desktop} media="(width > 62.5rem)" />
-            <img src={image.mobile} alt="" />
+            <img
+              src={image.mobile}
+              alt=""
+              style={{
+                transform: `translateX(calc(-${index * 100}% - ${index * 16}px))`,
+              }}
+            />
           </picture>
         ))}
       </div>
-      <CarousellBtn />
+      <CarousellBtn setIndex={setIndex} />
     </div>
   );
 };
@@ -93,9 +107,11 @@ const Description = () => (
 );
 
 function Discover() {
+  const [index, setIndex] = useState(0);
+
   return (
     <section className="home__discover">
-      <ImageCarousell />
+      <ImageCarousell setIndex={setIndex} index={index} />
       <Description />
     </section>
   );
