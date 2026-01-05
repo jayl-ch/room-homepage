@@ -67,7 +67,9 @@ const ImageCarousell = ({ setIndex, index }) => {
               src={image.mobile}
               alt=""
               style={{
-                transform: `translateX(calc(-${index * 100}% - ${index * 16}px))`,
+                transform: `translateX(calc(-${index * 100}% - ${
+                  index * 16
+                }px))`,
               }}
             />
           </picture>
@@ -91,20 +93,33 @@ const ShopNow = () => (
   </button>
 );
 
-const Description = () => (
-  <div className="home__discover-description c-card-description">
-    <h2 className="home__discover-title">
-      Discover innovative ways to decorate
-    </h2>
-    <p className="home__discover-paragraph c-card-paragraph">
-      We provide unmatched quality, comfort, and style for property owners
-      across the country. Our experts combine form and function in bringing your
-      vision to life. Create a room in your own style with our collection and
-      make your property a reflection of you and what you love.
-    </p>
-    <ShopNow />
-  </div>
-);
+const Description = ({index}) => {
+  const card = [
+    {
+      title: "Discover innovative ways to decorate",
+      paragraph:
+        "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
+    },
+    {
+      title: "We are available all across the globe",
+      paragraph:
+        "With atores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+    },
+    {
+      title: "Manufactured with the best materials",
+      paragraph:
+        "Our modern furniture store provide high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. WIth three decades of experience in this undustry, we understand what customers want for their home and office.",
+    },
+  ];
+
+  return (
+    <div className="home__discover-description c-card-description">
+      <h2 className="home__discover-title">{card[index].title}</h2>
+      <p className="home__discover-paragraph c-card-paragraph">{card[index].paragraph}</p>
+      <ShopNow />
+    </div>
+  );
+};
 
 function Discover() {
   const [index, setIndex] = useState(0);
@@ -112,7 +127,7 @@ function Discover() {
   return (
     <section className="home__discover">
       <ImageCarousell setIndex={setIndex} index={index} />
-      <Description />
+      <Description index={index}/>
     </section>
   );
 }
