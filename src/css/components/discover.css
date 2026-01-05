@@ -23,6 +23,15 @@
   text-transform: uppercase;
   letter-spacing: 0.6125rem;
   padding: 1rem 0 0 0;
+  cursor: pointer;
+}
+
+.home__shopnow-btn:hover {
+  color: var(--primary-grey-500);
+}
+
+.home__shopnow-btn:hover svg {
+  fill: var(--primary-grey-500);
 }
 
 @media (width > 62.5rem) {
@@ -32,5 +41,15 @@
 
   .home__discover-description {
     max-width: 700px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home__shopnow-btn {
+    transition: color .2s;
+  }
+
+  .home__shopnow-btn svg {
+    transition: fill .2s;
   }
 }

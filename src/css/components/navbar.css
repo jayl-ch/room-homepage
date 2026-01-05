@@ -57,6 +57,7 @@
   text-decoration: none;
   color: var(--primary-black);
   font-weight: 700;
+  position: relative;
 }
 
 .overlay {
@@ -98,6 +99,20 @@
 
   .nav-link {
     color: var(--primary-white);
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    border-block-end: solid var(--primary-white);
+    width: 0;
+    bottom: -0.4rem;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
   }
 
   .navbar__close-btn {
@@ -111,5 +126,8 @@
   }
   .overlay {
     transition: opacity 0.2s;
+  }
+  .nav-link::after {
+    transition: width .2s;
   }
 }
