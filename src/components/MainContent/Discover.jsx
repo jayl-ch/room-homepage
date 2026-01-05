@@ -20,6 +20,7 @@ import imageDesktopThree from "../../assets/images/desktop-image-hero-3.jpg";
 const CarousellBtn = ({ setIndex }) => (
   <div className="carousell__btn">
     <button
+      type="button"
       onClick={() => setIndex((prev) => (prev === 0 ? prev : prev - 1))}
       className="btn--prev"
     >
@@ -33,6 +34,7 @@ const CarousellBtn = ({ setIndex }) => (
       </svg>
     </button>
     <button
+      type="button"
       onClick={() => setIndex((prev) => (prev === 2 ? prev : prev + 1))}
       className="btn--next"
     >
@@ -81,19 +83,18 @@ const ImageCarousell = ({ setIndex, index }) => {
 };
 
 const ShopNow = () => (
-  <button className="home__shopnow-btn">
+  <button type="button" className="home__shopnow-btn">
     shop now
     <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
-        fill="#000"
         fillRule="nonzero"
       />
     </svg>
   </button>
 );
 
-const Description = ({index}) => {
+const Description = ({ index }) => {
   const card = [
     {
       title: "Discover innovative ways to decorate",
@@ -103,7 +104,7 @@ const Description = ({index}) => {
     {
       title: "We are available all across the globe",
       paragraph:
-        "With atores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+        "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
     },
     {
       title: "Manufactured with the best materials",
@@ -115,7 +116,9 @@ const Description = ({index}) => {
   return (
     <div className="home__discover-description c-card-description">
       <h2 className="home__discover-title">{card[index].title}</h2>
-      <p className="home__discover-paragraph c-card-paragraph">{card[index].paragraph}</p>
+      <p className="home__discover-paragraph c-card-paragraph">
+        {card[index].paragraph}
+      </p>
       <ShopNow />
     </div>
   );
@@ -127,7 +130,7 @@ function Discover() {
   return (
     <section className="home__discover">
       <ImageCarousell setIndex={setIndex} index={index} />
-      <Description index={index}/>
+      <Description index={index} />
     </section>
   );
 }
