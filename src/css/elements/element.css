@@ -11,3 +11,13 @@ header {
   right: 0;
   left: 0;
 }
+
+img {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  img {
+    transition: transform 0.2s ease;
+  }
+}

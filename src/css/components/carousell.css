@@ -46,9 +46,6 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  img {
-    transition: transform 0.2s ease;
-  }
   .carousell__btn button {
     transition: background .2s;
   }
