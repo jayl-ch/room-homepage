@@ -4,7 +4,7 @@
   position: relative;
   padding-block: 2rem;
   z-index: 2;
-  max-width: 1400px;
+  max-width: 87.5rem;
   margin-inline: auto;
 }
 
@@ -35,7 +35,7 @@
   top: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   background-color: var(--primary-white);
   transform: translateY(-100%);
   bottom: -0.5rem;
@@ -116,6 +116,10 @@
   }
 
   .navbar__close-btn {
+    display: none;
+  }
+
+  .overlay {
     display: none;
   }
 }
