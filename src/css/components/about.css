@@ -1,0 +1,24 @@
+.home__about-description {
+  padding: 3rem 2rem;
+}
+
+.home__about-title {
+  margin: 0;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.home__about img {
+  width: 100%;
+}
+
+@media (width > 62.5rem) {
+  .home__about {
+    display: flex;
+  }
+
+  .home__about-description {
+    max-width: 600px;
+  }
+}

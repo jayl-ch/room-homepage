@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  background-color: gray;
+  font-family: var(--font-league);
+}
+
+header {
+  padding: 0 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}

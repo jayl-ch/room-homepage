@@ -1,0 +1,9 @@
+@import "./settings/variables.css";
+@import "./generic/reset.css";
+@import "./elements/element.css";
+@import "./components/navbar.css";
+@import "./components/carousell.css";
+@import "./components/discover.css";
+@import "./components/about.css";
+@import "./components/card.css";
+@import "./utilities/utility.css";

@@ -1,0 +1,8 @@
+.c-card-paragraph {
+  color: var(--primary-grey-500);
+  line-height: 1.2;
+}
+
+.c-card-description {
+  background-color: var(--primary-white);
+}

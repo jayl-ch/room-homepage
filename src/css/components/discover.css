@@ -1,0 +1,36 @@
+.home__discover {
+  position: relative;
+}
+
+.home__discover-description {
+  padding: clamp(3rem, 6vw, 7rem) clamp(2rem, 5vw, 6rem);
+}
+
+.home__discover-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  letter-spacing: -0.125rem;
+  margin: 0;
+}
+
+.home__shopnow-btn {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6125rem;
+  padding: 1rem 0 0 0;
+}
+
+@media (width > 62.5rem) {
+  .home__discover {
+    display: flex;
+  }
+
+  .home__discover-description {
+    max-width: 700px;
+  }
+}
