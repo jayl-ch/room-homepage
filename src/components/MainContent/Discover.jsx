@@ -21,7 +21,7 @@ const CarousellBtn = ({ setIndex }) => (
   <div className="carousell__btn">
     <button
       type="button"
-      onClick={() => setIndex((prev) => (prev === 0 ? prev : prev - 1))}
+      onClick={() => setIndex((prev) => (prev === 0 ? 2 : prev - 1))}
       className="btn--prev"
     >
       <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ const CarousellBtn = ({ setIndex }) => (
     </button>
     <button
       type="button"
-      onClick={() => setIndex((prev) => (prev === 2 ? prev : prev + 1))}
+      onClick={() => setIndex((prev) => (prev === 2 ? 0 : prev + 1))}
       className="btn--next"
     >
       <svg width="14" height="24" xmlns="http://www.w3.org/2000/svg">
