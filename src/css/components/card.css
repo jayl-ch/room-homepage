@@ -6,3 +6,18 @@
 .c-card-description {
   background-color: var(--primary-white);
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate {
+    animation: appear 0.3s ease;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
